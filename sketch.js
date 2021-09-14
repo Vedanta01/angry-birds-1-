@@ -1,7 +1,7 @@
 const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
-
+var score = 0;
 var engine, world;
 var box1, pig1;
 var backgroundImg,platform;
@@ -15,7 +15,7 @@ function setup(){
     engine = Engine.create();
     world = engine.world;
 
-
+    
     ground = new Ground(600,height,1200,20);
     platform = new Ground(150, 305, 300, 170);
 
@@ -39,7 +39,9 @@ function setup(){
 }
 
 function draw(){
+   
     background(backgroundImg);
+    text("SCORE "+score, 1000, 50)
     Engine.update(engine);
     console.log(box2.body.position.x);
     console.log(box2.body.position.y);
